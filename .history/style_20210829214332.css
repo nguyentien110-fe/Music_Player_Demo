@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#app {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 440px;
+    height: 100px;
+    margin: -10px auto;
+}
+
+#bg-artwork {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+    z-index: 1;
+}
+
+#bg-layer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #ebebeb;
+    opacity: 0.4;
+    z-index: 2;
+}
+
+#player {
+    position: relative;
+    height: 100%;
+    z-index: 3;
+}
+
+#player-track {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    left: 15px;
+    bottom: 0;
+    padding: 14px 22px 12px 152px;
+    background-color: #fff7f7;
+    border-radius: 15px 15px 0 0;
+    z-index: 3;
+    transition: 0.3s ease top;
+    will-change: transition;
+}
+
+#player-track.active {
+    top: -110px;
+}
+
+#album-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #54576f;
+    font-size: 28px;
+    font-weight: 550;
+}
+
+#track-name {
+    color: #999;
+    font-size: 20px;
+    margin: 4px 0 14px 0;
+}
+
+#track-time {
+    height: 12px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+#current-time {
+    float: left;
+}
+
+#track-length {
+    float: right;
+}
+
+#current-time,
+#track-length {
+    color: transparent;
+    font-size: 14px;
+    background-color: #ffe8ee;
+    transition: 0.4s ease all;
+    will-change: transition;
+}
+
+#track-time.active #current-time,
+#track-time.active #track-length {
+    color: #f86d92;
+    background-color: transparent;
+}
+
+#s-area,
+#seek-bar {
+    position: relative;
+    bottom: 4px;
+    height: 6px;
+    border-radius: 6px;
+}
+
+#s-area {
+    background-color: #ffe8ee;
+    cursor: pointer;
+}
+
+#ins-time {
+    position: absolute;
+    top: -30px;
+    color: #fff;
+    font-size: 12px;
+    white-space: pre;
+    padding: 8px 6px;
+    border-radius: 4px;
+    display: none;
+}
+
+#s-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.2;
+    z-index: 2;
+}

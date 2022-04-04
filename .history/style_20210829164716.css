@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#player-content {
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 10px 20px #5a5a5a;
+    border-radius: 20px;
+    z-index: 2;
+}
+
+#album-art {
+    position: absolute;
+    top: -40px;
+    width: 120px;
+    height: 120px;
+    margin-left: 30px;
+}

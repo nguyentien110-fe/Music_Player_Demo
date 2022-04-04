@@ -1,0 +1,12 @@
+@media (max-width: 1024px) {
+    #app {
+        width: 80%;
+    }
+    #album-art {
+        width: 30%;
+        height: 100%;
+    }
+    #player-controls {
+        width: 70%;
+    }
+}

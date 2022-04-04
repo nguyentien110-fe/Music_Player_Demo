@@ -1,0 +1,17 @@
+@media (max-width: 1024px) {
+    #app {
+        width: 85%;
+    }
+    #album-art {
+        width: 30%;
+        height: 100%;
+        margin-left: 20px;
+    }
+    #player-controls {
+        width: 65%;
+    }
+    .button {
+        width: 20%;
+        height: 20%;
+    }
+}

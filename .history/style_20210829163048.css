@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#app {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 440px;
+    height: 100px;
+    margin: -10px auto;
+}
+
+#bg-artwork {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#player {
+    position: relative;
+    height: 100%;
+    z-index: 3;
+}
+
+#player-track {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    left: 15px;
+    bottom: 0;
+    padding: 14px 22px 12px 152px;
+    background-color: #fff7f7;
+    border-radius: 15px 15px 0 0;
+    /* transition: 0.3s ease top; */
+    z-index: 1;
+}
+
+
+/* #player-track.active {
+    top: -110px;
+} */
+
+#album-name {
+    white-space: nowrap;
+    overflow: hidden;
+}

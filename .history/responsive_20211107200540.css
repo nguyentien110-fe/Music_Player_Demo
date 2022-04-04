@@ -1,0 +1,27 @@
+@media (max-width: 1024px) {
+    #app {
+        width: 85%;
+    }
+    #album-art {
+        width: 30%;
+        height: 100%;
+        margin-left: 20px;
+    }
+    #player-controls {
+        width: 65%;
+    }
+    .button {
+        width: 30%;
+        height: 10%;
+    }
+    #player-track.active {
+        top: -100px;
+    }
+    #track-time {
+        margin-bottom: -18px;
+    }
+    #track-length {
+        margin-top: 1px;
+    }
+    #current-time {}
+}

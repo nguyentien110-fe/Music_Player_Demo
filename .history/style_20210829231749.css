@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+*:focus {
+    outline: none;
+}
+
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+#app {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 440px;
+    height: 100px;
+    margin: -10px auto;
+}
+
+#bg-artwork {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+#bg-layer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #ebebeb;
+    opacity: 0.5;
+    z-index: 2;
+}
+
+#player {
+    position: relative;
+    height: 100%;
+    z-index: 3;
+}
+
+#player-track {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    left: 15px;
+    padding: 14px 22px 12px 152px;
+    background-color: #fff7f7;
+    border-radius: 15px 15px 0 0;
+    z-index: 1;
+    transition: 0.3s ease top;
+    will-change: transition;
+}
+
+#player-track.active {
+    top: -110px;
+}
+
+#album-name {
+    color: #54576f;
+    font-size: 28px;
+    font-weight: 550;
+}
+
+#track-name {
+    color: #999;
+    font-size: 20px;
+    margin: 4px 0 14px 0;
+}
+
+#track-time {
+    height: 12px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+#current-time {
+    float: left;
+}
+
+#track-length {
+    float: right;
+}
+
+#current-time,
+#track-length {
+    color: transparent;
+    font-size: 14px;
+    background-color: #ffe8ee;
+    border-radius: 10px;
+    transition: 0.4s ease all;
+    will-change: transition;
+}
+
+#track-time.active #current-time,
+#track-time.active #track-length {
+    color: #f86d92;
+    background-color: transparent;
+}
+
+#s-area,
+#seek-bar {
+    position: relative;
+    bottom: 4px;
+    height: 6px;
+    border-radius: 6px;
+}
+
+#s-area {
+    background-color: #ffe8ee;
+    cursor: pointer;
+}
+
+#ins-time {
+    position: absolute;
+    top: -30px;
+    color: #fff;
+    font-size: 12px;
+    white-space: pre;
+    padding: 8px 6px;
+    border-radius: 4px;
+    display: none;
+}
+
+#s-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.2;
+    z-index: 2;
+}
+
+#ins-time,
+#s-hover {
+    background-color: #434450;
+}
+
+#seek-bar {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fd6d94;
+    z-index: 1;
+    transition: 0.2s ease all;
+    will-change: transition;
+}
+
+#player-content {
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 10px 20px #5a5a5a;
+    border-radius: 20px;
+    z-index: 3;
+}
+
+#album-art {
+    position: absolute;
+    top: -40px;
+    width: 120px;
+    height: 120px;
+    margin-left: 30px;
+    box-shadow: 0 0 0 8px #f5f5f5;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: 0.4s ease all;
+    will-change: transition;
+}
+
+#album-art.active {
+    top: -72px;
+    box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+}
+
+#album-art::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    margin: -10px auto -10px auto;
+    background-color: #d6dee7;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px #fff;
+    z-index: 2;
+}
+
+#album-art img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+#album-art img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+#album-art.active img.active {
+    z-index: 1;
+    animation: animateAlbum 4s linear 0s infinite forwards;
+}
+
+@keyframes animateAlbum {
+    0% {
+        transform: rotateZ(0);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+#player-controls {
+    width: 250px;
+    height: 100%;
+    margin: 0 6px 0 140px;
+    float: right;
+}
+
+.control {
+    width: 33.333%;
+    float: left;
+    padding: 12px 0;
+}
+
+.button {
+    width: 26px;
+    height: 26px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.button i {
+    display: block;
+    color: #d6dee7;
+    font-size: 26px;
+    text-align: center;
+}
+
+.button,
+.button i {
+    transition: 0.4s ease all;
+    will-change: transition;
+}
+
+.button:hover {
+    background-color: #dadada;
+    box-shadow: 0 0 10px #c9c9c9;
+    transform: scale(1.1);
+}
+
+.button:hover i {
+    color: #fff;
+}

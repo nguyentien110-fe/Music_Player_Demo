@@ -1,0 +1,9 @@
+@media (max-width: 1024px) {
+    #app {
+        width: 80%;
+    }
+    #album-art {
+        width: 30%;
+        height: 60%;
+    }
+}
